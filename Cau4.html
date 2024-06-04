@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class DienThoai {
+        constructor(MaDT, Ten, HangSx, Gia) {
+            this._MaDT = MaDT;
+            this._Ten = Ten;
+            this._HangSx = HangSx;
+            this._Gia = Gia;
+        }
+
+        get MaDT() {
+            return this._MaDT;
+        }
+
+        set MaDT(value) {
+            this._MaDT = value;
+        }
+
+        get Ten() {
+            return this._Ten;
+        }
+
+        set Ten(value) {
+            this._Ten = value;
+        }
+
+        get HangSx() {
+            return this._HangSx;
+        }
+
+        set HangSx(value) {
+            this._HangSx = value;
+        }
+
+        get Gia() {
+            return this._Gia;
+        }
+
+        set Gia(value) {
+            this._Gia = value;
+        }
+
+        toString() {
+            return `Mã điện thoại: ${this._MaDT}, Tên: ${this._Ten}, Hãng sản xuất: ${this._HangSx}, Giá: ${this._Gia}`;
+        }
+    }
+
+    class QuanLyDienThoai {
+        constructor() {
+            this._DanhSachDienThoai = [];
+        }
+
+
+        ThemDienThoai(dienThoai) {
+            this._DanhSachDienThoai.push(dienThoai);
+        }
+        HienThiDanhSach() {
+            console.log("Danh sách điện thoại:");
+            this._DanhSachDienThoai.forEach(dienThoai => {
+                document.write(`${dienThoai.toString()} <br>`);
+            });
+        }
+        SapXepDienThoai() {
+            let sapXep = this._DanhSachDienThoai.sort((a, b) => a.Ten.localeCompare(b.Ten));
+            sapXep.forEach(dienThoai => {
+                document.write(`${dienThoai.toString()} <br>`);
+            });
+        }
+    }
+
+    let qlDienThoai = new QuanLyDienThoai();
+
+    qlDienThoai.ThemDienThoai(new DienThoai("1", "Samsung s24 urtral", "Samsung", 20000000));
+    qlDienThoai.ThemDienThoai(new DienThoai("2", "iPhone 12", "Apple", 25000000));
+    qlDienThoai.ThemDienThoai(new DienThoai("3", "Xiaomi 14", "Xiaomi", 15000000));
+
+    document.write(`Danh sách sau khi them dien thoai <br>`);
+    qlDienThoai.HienThiDanhSach();
+    document.write("Danh sách điện thoại đã được sắp xếp theo tên:<br>");
+    qlDienThoai.SapXepDienThoai();
+
+
+</script>
+</body>
+</html>

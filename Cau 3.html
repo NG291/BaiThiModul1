@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function KTSNT(a){
+        if(a<2){
+            return false
+        }
+        if(a===2){
+            return  true;
+        }
+        for(let i=3; i<a; i++){
+            if(a%i===0){
+                return false;
+            }
+        }
+        return true
+    }
+    function SapXep(arr){
+        let strArr=[];
+        for(let i=0; i<arr.length; i++){
+            if(KTSNT(arr[i])){
+                strArr.push(arr[i])
+            }
+        }
+       return  strArr.sort((a,b)=>a-b)
+    }
+    let arr=[1,5,6,23,8,47,10,3]
+    alert(`Ham tra ve so nguyen to va tra ve gia tri ket qua tang dan ${SapXep(arr)}`)
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let N=+prompt("Nhap n phan tu ")
+  let sumle=0;
+  let sumchan=0;
+  let Hieu;
+  if(N>20){
+    alert("Vuot qua so luong phan tu")
+  }
+  else {
+    for(let i=0; i<N; i++){
+      if(i%2===0){
+        sumchan+=i;
+      }
+      else {
+        sumle+=i;
+      }
+    }
+    hieu=sumchan-sumle;
+  }
+  alert(`Ket qua cua hieu tong chan va tong le: ${Math.abs(hieu)}`)
+</script>
+</body>
+</html>
